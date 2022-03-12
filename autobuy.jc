@@ -1,0 +1,36 @@
+function buy() {
+    let flag_st = false;
+
+    setInterval(() => {
+        if (!flag_st) {
+            let btn_l = document.querySelector(".btn-list");
+            let btn_L = btn_l.querySelector(".btn-primary");
+
+            if (btn_L !== null) {
+                btn_L.click();
+                flag_st = true;
+            }
+        }
+    }, 50);
+
+
+    let flag_nd = false;
+
+    setInterval(() => {
+        if (!flag_nd) {
+            let div = document.querySelector(".el-dialog__body");
+      console.log("doc");
+            
+            if (div !== null) {
+                flag_nd = true;
+
+                let child = div.querySelector(".dialog-body");
+                let button = child.querySelector(".btn");
+                button.disabled = false;
+                button.click();
+            }
+        }
+    }, 50);
+}
+
+buy();
